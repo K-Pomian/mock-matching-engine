@@ -1,0 +1,9 @@
+syntax = "proto3";
+package proto_decimal;
+
+message ProtoDecimal {
+    uint32 flags = 1;
+    uint32 hi = 2;
+    uint32 lo = 3;
+    uint32 mid = 4;
+}

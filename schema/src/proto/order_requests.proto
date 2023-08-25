@@ -4,7 +4,7 @@ package order_requests;
 import "proto_decimal.proto";
 
 message PlaceMarketOrderRequest {
-  string order_id = 1;
+  string request_id = 1;
   uint64 user_id = 2;
   proto_decimal.ProtoDecimal size = 3;
   proto_decimal.ProtoDecimal max_price = 4;
@@ -15,7 +15,7 @@ message PlaceMarketOrderRequest {
 }
 
 message PlaceLimitOrderRequest {
-  string order_id = 1;
+  string request_id = 1;
   uint64 user_id = 2;
   proto_decimal.ProtoDecimal size = 3;
   proto_decimal.ProtoDecimal price = 4;

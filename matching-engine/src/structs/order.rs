@@ -8,4 +8,5 @@ pub struct LimitOrder {
     pub initial_size: Decimal,
     pub remaining_size: Decimal,
     pub side: OrderSide,
+    pub maker_fee: Decimal,
 }

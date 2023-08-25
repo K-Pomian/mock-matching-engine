@@ -1,3 +1,3 @@
 pub(crate) mod engine;
-mod order;
+pub(crate) mod order;
 mod orderbook;

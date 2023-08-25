@@ -5,16 +5,31 @@ import "proto_decimal.proto";
 
 message RequestResponse {
     string request_id = 1;
-    uint64 order_id = 2;
-    uint64 user_id = 3;
-    repeated Fill fills = 4;
-    proto_decimal.ProtoDecimal maker_fee_amount = 5;
-    proto_decimal.ProtoDecimal taker_fee_amount = 6;
-    uint64 timestamp = 7;
+    Status status = 2;
+    optional FailureReason failure_reason = 3;
+    optional RequestOutput output = 4;
+    uint64 timestamp = 5;
+}
+
+message RequestOutput {
+    uint64 order_id = 1;
+    uint64 user_id = 2;
+    repeated Fill fills = 3;
+    proto_decimal.ProtoDecimal maker_fee_amount = 4;
+    proto_decimal.ProtoDecimal taker_fee_amount = 5;
 }
 
 message Fill {
     uint64 filled_order_id = 1;
     uint64 filled_amount = 2;
     bool filled_in_full = 3;
+}
+
+enum Status {
+    SUCCESS = 0;
+    FAILURE = 1;
+}
+
+enum FailureReason {
+    NotEnoughLiquidity = 0;
 }

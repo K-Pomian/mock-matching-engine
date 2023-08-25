@@ -2,7 +2,7 @@
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct PlaceMarketOrderRequest {
     #[prost(string, tag = "1")]
-    pub order_id: ::prost::alloc::string::String,
+    pub request_id: ::prost::alloc::string::String,
     #[prost(uint64, tag = "2")]
     pub user_id: u64,
     #[prost(message, optional, tag = "3")]
@@ -22,7 +22,7 @@ pub struct PlaceMarketOrderRequest {
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct PlaceLimitOrderRequest {
     #[prost(string, tag = "1")]
-    pub order_id: ::prost::alloc::string::String,
+    pub request_id: ::prost::alloc::string::String,
     #[prost(uint64, tag = "2")]
     pub user_id: u64,
     #[prost(message, optional, tag = "3")]

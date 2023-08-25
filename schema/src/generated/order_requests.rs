@@ -5,16 +5,16 @@ pub struct PlaceMarketOrderRequest {
     pub order_id: ::prost::alloc::string::String,
     #[prost(uint64, tag = "2")]
     pub user_id: u64,
-    #[prost(uint64, tag = "3")]
-    pub size: u64,
-    #[prost(uint64, tag = "4")]
-    pub max_price: u64,
+    #[prost(message, optional, tag = "3")]
+    pub size: ::core::option::Option<super::proto_decimal::ProtoDecimal>,
+    #[prost(message, optional, tag = "4")]
+    pub max_price: ::core::option::Option<super::proto_decimal::ProtoDecimal>,
     #[prost(enumeration = "OrderSide", tag = "5")]
     pub order_side: i32,
-    #[prost(uint64, tag = "6")]
-    pub maker_fee: u64,
-    #[prost(uint64, tag = "7")]
-    pub taker_fee: u64,
+    #[prost(message, optional, tag = "6")]
+    pub maker_fee: ::core::option::Option<super::proto_decimal::ProtoDecimal>,
+    #[prost(message, optional, tag = "7")]
+    pub taker_fee: ::core::option::Option<super::proto_decimal::ProtoDecimal>,
     #[prost(uint64, tag = "8")]
     pub timestamp: u64,
 }
@@ -25,16 +25,16 @@ pub struct PlaceLimitOrderRequest {
     pub order_id: ::prost::alloc::string::String,
     #[prost(uint64, tag = "2")]
     pub user_id: u64,
-    #[prost(uint64, tag = "3")]
-    pub size: u64,
-    #[prost(uint64, tag = "4")]
-    pub price: u64,
+    #[prost(message, optional, tag = "3")]
+    pub size: ::core::option::Option<super::proto_decimal::ProtoDecimal>,
+    #[prost(message, optional, tag = "4")]
+    pub price: ::core::option::Option<super::proto_decimal::ProtoDecimal>,
     #[prost(enumeration = "OrderSide", tag = "5")]
     pub order_side: i32,
-    #[prost(uint64, tag = "6")]
-    pub maker_fee: u64,
-    #[prost(uint64, tag = "7")]
-    pub taker_fee: u64,
+    #[prost(message, optional, tag = "6")]
+    pub maker_fee: ::core::option::Option<super::proto_decimal::ProtoDecimal>,
+    #[prost(message, optional, tag = "7")]
+    pub taker_fee: ::core::option::Option<super::proto_decimal::ProtoDecimal>,
     #[prost(uint64, tag = "8")]
     pub timestamp: u64,
 }

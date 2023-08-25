@@ -8,5 +8,6 @@ edition = "2021"
 [dependencies]
 anyhow = { workspace = true }
 tokio = { workspace = true }
+rust_decimal = { workspace = true }
 
 schema = { path = "../schema" }

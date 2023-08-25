@@ -8,6 +8,7 @@ edition = "2021"
 [dependencies]
 prost = { workspace = true }
 prost-derive = { workspace = true }
+rust_decimal = { workspace = true }
 
 [build-dependencies]
 prost-build = "0.11.9"

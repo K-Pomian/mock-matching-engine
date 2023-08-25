@@ -12,17 +12,18 @@ message RequestResponse {
 }
 
 message RequestOutput {
-    uint64 order_id = 1;
+    optional uint64 order_id = 1;
     uint64 user_id = 2;
     repeated Fill fills = 3;
-    proto_decimal.ProtoDecimal maker_fee_amount = 4;
-    proto_decimal.ProtoDecimal taker_fee_amount = 5;
+    proto_decimal.ProtoDecimal taker_fee_amount = 4;
 }
 
 message Fill {
     uint64 filled_order_id = 1;
-    uint64 filled_amount = 2;
-    bool filled_in_full = 3;
+    uint64 user_id = 2;
+    proto_decimal.ProtoDecimal filled_amount = 3;
+    proto_decimal.ProtoDecimal maker_fee_amount = 4;
+    bool filled_in_full = 5;
 }
 
 enum Status {

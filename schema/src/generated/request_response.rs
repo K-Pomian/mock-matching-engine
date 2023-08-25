@@ -15,15 +15,13 @@ pub struct RequestResponse {
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct RequestOutput {
-    #[prost(uint64, tag = "1")]
-    pub order_id: u64,
+    #[prost(uint64, optional, tag = "1")]
+    pub order_id: ::core::option::Option<u64>,
     #[prost(uint64, tag = "2")]
     pub user_id: u64,
     #[prost(message, repeated, tag = "3")]
     pub fills: ::prost::alloc::vec::Vec<Fill>,
     #[prost(message, optional, tag = "4")]
-    pub maker_fee_amount: ::core::option::Option<super::proto_decimal::ProtoDecimal>,
-    #[prost(message, optional, tag = "5")]
     pub taker_fee_amount: ::core::option::Option<super::proto_decimal::ProtoDecimal>,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
@@ -32,8 +30,12 @@ pub struct Fill {
     #[prost(uint64, tag = "1")]
     pub filled_order_id: u64,
     #[prost(uint64, tag = "2")]
-    pub filled_amount: u64,
-    #[prost(bool, tag = "3")]
+    pub user_id: u64,
+    #[prost(message, optional, tag = "3")]
+    pub filled_amount: ::core::option::Option<super::proto_decimal::ProtoDecimal>,
+    #[prost(message, optional, tag = "4")]
+    pub maker_fee_amount: ::core::option::Option<super::proto_decimal::ProtoDecimal>,
+    #[prost(bool, tag = "5")]
     pub filled_in_full: bool,
 }
 #[derive(Clone, Copy, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, ::prost::Enumeration)]
